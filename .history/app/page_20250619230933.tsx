@@ -372,7 +372,7 @@ const PlanMyTripPage: FC<{
     try {
       const chatHistory = [{ role: 'user', parts: [{ text: prompt }] }];
       const payload = { contents: chatHistory };
-      const apiKey = 'AIzaSyDXFnVVj2aB9uRLM43LorPynS4a9bicUxQ';
+      const apiKey = '';
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -795,7 +795,7 @@ const HomePage: FC<{ setPage: (page: string) => void }> = ({ setPage }) => (
             rating={5.0}
           />
           <TourCard
-            image="itchan.jpg"
+            image="islamic - Copy.jpg"
             title="Nomad's Life in Issyk-Kul"
             duration="7 Days"
             price="$1,800"

@@ -1,4 +1,3 @@
-'use client';
 import {
   useState,
   FC,
@@ -372,7 +371,7 @@ const PlanMyTripPage: FC<{
     try {
       const chatHistory = [{ role: 'user', parts: [{ text: prompt }] }];
       const payload = { contents: chatHistory };
-      const apiKey = 'AIzaSyDXFnVVj2aB9uRLM43LorPynS4a9bicUxQ';
+      const apiKey = '';
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -736,10 +735,9 @@ const HomePage: FC<{ setPage: (page: string) => void }> = ({ setPage }) => (
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <img
         src="/itchan.jpg"
-        className="absolute inset-0 w-full h-full object-cover "
+        className="absolute inset-0 w-full h-full object-cover"
         alt="Mountain landscape"
       />
-      <div className="absolute inset-0 bg-black/50 "></div>
       <div className="relative z-10 text-center text-white px-4">
         <h2 className="text-5xl md:text-7xl font-extrabold drop-shadow-lg">
           Travel Smart. Travel Soulfully.
@@ -767,7 +765,7 @@ const HomePage: FC<{ setPage: (page: string) => void }> = ({ setPage }) => (
               <DestinationCard
                 key={dest}
                 name={dest}
-                image={`/${dest.toLowerCase()}.jpg`}
+                image={`https://source.unsplash.com/800x600/?${dest.toLowerCase()}`}
               />
             )
           )}
@@ -781,21 +779,21 @@ const HomePage: FC<{ setPage: (page: string) => void }> = ({ setPage }) => (
         </h2>
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <TourCard
-            image="/uzbekistan.avif"
+            image="https://source.unsplash.com/800x600/?samarkand"
             title="Samarkand's Silk Road Wonders"
             duration="5 Days"
             price="$1,200"
             rating={4.9}
           />
           <TourCard
-            image="lyabi - Copy.jpg"
+            image="https://source.unsplash.com/800x600/?fann-mountains"
             title="Fann Mountains Trekking Adventure"
             duration="10 Days"
             price="$2,500"
             rating={5.0}
           />
           <TourCard
-            image="itchan.jpg"
+            image="https://source.unsplash.com/800x600/?yurt"
             title="Nomad's Life in Issyk-Kul"
             duration="7 Days"
             price="$1,800"
